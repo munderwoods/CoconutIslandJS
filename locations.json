@@ -1,0 +1,409 @@
+[
+ {
+  "key": "RICKENS_DOOR",
+  "name": "Ricken's Door",
+  "directions": {
+    "north": {
+      "destination": "DOCKS",
+      "access": "crowd"
+    },
+    "east": {
+      "destination": "RICKENS_HOVEL",
+      "access": "lockedDoor"
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "You stand in front of Ricken's door. It's east of you. His home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. The crowd at the boats is impassable. The cobblestone is slippery under your boots.",
+    "secondDescription": "You stand in front of Ricken's door. It's east of you. His home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. Ricken has cleared a path through to the boats. The cobblestone is slippery under your boots.",
+    "thirdDescription": ""
+  },
+  "items": ["DOOR"],
+  "icon": "_",
+  "visited": true,
+  "temperature": 5
+},
+ {
+  "key": "RICKENS_HOVEL",
+  "name": "Ricken's Hovel",
+  "directions": {
+    "north": {
+      "destination": "",
+      "access": ""
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "RICKENS_DOOR",
+      "access": "open"
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "A small room lit by a mostly open fire with a cast iron pot hung over it. There are rum bottles scattered across the floor. The door to the west leads outside.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": ["RIFLE", "RICKEN"],
+  "icon": "_",
+  "visited": false,
+  "temperature": 6
+},
+ {
+  "key": "DOCKS",
+  "name": "Ricken's Door",
+  "directions": {
+    "north": {
+      "destination": "",
+      "access": ""
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "The entire population of the island is at the docks trying to get passage on a boat. One trawler is inundated with flesh and taking on water. Ricken's men are fending them off with spears. Ricken stands at the edge of his boat with his rifle on his hip waiting for you.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "firstVisitText": "As the crowd encroahces on his boat, Ricken fires his rifle into the air. The scene goes quiet except for one woman with a baby. She sees you waiver as you board and she pleads for you to take the child. You look away and she pushes it under your arm. You throw your hands up and the kid goes into the drink. She goes onto her knees. Two of the men leap at you.",
+  "items": [],
+  "icon": "_",
+  "visited": false,
+  "temperature": 5
+},
+ {
+  "key": "UNCONSCIOUS",
+  "name": "Unconscious",
+  "directions": {
+    "north": {
+      "destination": "",
+      "access": ""
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "You are unconscious.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": [],
+  "icon": "_",
+  "visited": false,
+  "temperature": 5
+},
+ {
+  "key": "OCEAN",
+  "name": "Ocean",
+  "directions": {
+    "north": {
+      "destination": "",
+      "access": ""
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "SHORE",
+      "access": "shore"
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "You are on a small boat on a roiling sea. The sky is blotched with dark, gray clouds. It fades into the ocean in all directions save to the south. There you see a sliver of dark between the peaks of the waves.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": [],
+  "icon": "\u223F",
+  "visited": false,
+  "temperature": 5
+},
+ {
+  "key": "SHORE",
+  "name": "Shore",
+  "directions": {
+    "north": {
+      "destination": "OCEAN",
+      "access": "water"
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "DELTA",
+      "access": "open"
+    },
+    "south": {
+      "destination": "JUNGLE",
+      "access": "open"
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "The sand is gray, as is everything. The sea is north. To the east and west there is more beach. South there is a path into the jungle. A bare, black crag juts out from its center.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": ["BEACH", "BOAT"],
+  "icon": "\u2592",
+  "visited": false,
+  "temperature": 5
+},
+ {
+  "key": "JUNGLE",
+  "name": "Jungle",
+  "directions": {
+    "north": {
+      "destination": "SHORE",
+      "access": "open"
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "CAVE",
+      "access": "open"
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "The air in the jungle is thick. You can only cut a narrow path through. Huge ferns sweep past your legs as you walk. They could be hiding anything. To the south, almost hidden behind a huge, moss covered rock, you find the entrance to the cave. To the east and west there is more jungle. You can hear the ocean to the north.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": ["COCONUT", "TREES", "FERNS", "VINES"],
+  "icon": "J",
+  "visited": false,
+  "temperature": 4
+},
+ {
+  "key": "CAVE",
+  "name": "Cave",
+  "directions": {
+    "north": {
+      "destination": "JUNGLE",
+      "access": "open"
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "FLINT_CHAMBER",
+      "access": "falseWall"
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "You are in a dark cave. The walls are wet and slick. After your eyes adjust you can see what appears to be a switch set into the wall high above you.",
+    "secondDescription": "Everything around you is on fire. There is a large crack to the north. You can see jungle beyond it. To the south there is a low opening.",
+    "thirdDescription": ""
+  },
+  "items": ["FLINT_VEIN"],
+  "icon": "F",
+  "visited": false,
+  "temperature": 4
+},
+ {
+  "key": "DELTA",
+  "name": "Delta",
+  "directions": {
+    "north": {
+      "destination": "",
+      "access": ""
+    },
+    "east": {
+      "destination": "SHORE",
+      "access": "open"
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "FALLS",
+      "access": "climb"
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "A narrow but deep river meets the sea here. There is some vegetation around the edges, but nothing of any apparent use. To the east is a stretch of beach. North is the ocean. To the south is a high waterfall. It's falling from a cliff. There are hand holds in the cliff, but you have never climbed anything that didn't have rungs.",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": ["RIVER", "BERRY_BUSH", "CLOTH"],
+  "icon": "V",
+  "visited": false,
+  "temperature": 5
+},
+ {
+  "key": "FALLS",
+  "name": "Falls",
+  "directions": {
+    "north": {
+      "destination": "DELTA",
+      "access": "climb"
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "You stand at the edge of a sheer cliff. It is as high as a three story building. A deep river comes from the South and flows over the cliff. The sound of the falling water is deafening. You might be able to climb down here, but the thought of it make your chest tighten up and your stomach drop",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": ["RIVER"],
+  "icon": "W",
+  "visited": false,
+  "temperature": 5
+},
+ {
+  "key": "KEY",
+  "name": "name",
+  "directions": {
+    "north": {
+      "destination": "",
+      "access": ""
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptions": {
+    "firstDescription": "",
+    "secondDescription": "",
+    "thirdDescription": ""
+  },
+  "items": [],
+  "icon": "_",
+  "visited": false,
+  "temperature": 5
+}
+]
+

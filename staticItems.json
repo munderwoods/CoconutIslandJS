@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Door",
+    "key": "DOOR",
+    "status": "locked",
+    "visualDescription": "A shoddy wooden door.",
+    "locationDescription": "The door to Ricken's hovel is locked.",
+    "obtainable": 0,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Ricken",
+    "key": "RICKEN",
+    "status": "",
+    "visualDescription": "Ricken is a seaman if there ever was one. He has wispy silver hair that matches his moustaches. The moustaches, like his eyes and nose, are thin.",
+    "locationDescription": "Ricken is standing by the fire, drinking.",
+    "obtainable": 0,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Rifle",
+    "key": "RIFLE",
+    "status": "",
+    "visualDescription": "A long, wooden rifle. You don't know enough to say more about it.",
+    "locationDescription": "",
+    "obtainable": 0,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  }
+]

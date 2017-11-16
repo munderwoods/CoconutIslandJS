@@ -1,0 +1,23 @@
+{
+  "name": "coconutisland",
+  "version": "1.0.0",
+  "description": "A Curses Text Adventure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0",
+    "eslint": "^4.11.0",
+    "prompt": "^1.0.0",
+    "promptly": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/munderwoods/CoconutIsland.git"
+  }
+}
