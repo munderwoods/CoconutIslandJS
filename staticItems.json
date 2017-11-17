@@ -20,16 +20,5 @@
     "yields": "",
     "edible": false,
     "drinkable": false
-  },
-  {
-    "name": "Rifle",
-    "key": "RIFLE",
-    "status": "",
-    "visualDescription": "A long, wooden rifle. You don't know enough to say more about it.",
-    "locationDescription": "",
-    "obtainable": 0,
-    "yields": "",
-    "edible": false,
-    "drinkable": false
   }
 ]

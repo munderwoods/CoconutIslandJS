@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Map",
+    "key": "MAP",
+    "status": "",
+    "visualDescription": "A map of the indian ocean. From what you can tell, your current location is unmarked. You will have to update the map as you go.",
+    "locationDescription": "There is what appears to be a rolled up map here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  }
+]
