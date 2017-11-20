@@ -1,5 +1,9 @@
 const { getLocation } = require('./helpers');
 const { addToPrintBuffer } = require('./helpers');
+const { findLocation } = require('./helpers');
+const { findDynamicLocation } = require('./helpers');
+const { setLocationProperty } = require('./helpers');
+const { getLocationProperty } = require('./helpers');
 
 
 module.exports = {
@@ -9,10 +13,12 @@ module.exports = {
         if(destination === "") {
             return addToPrintBuffer("You can't go that way.");
         }
-
+        if(getLocationProperty(state.location, `directions.${direction}.access`) === 'open') {
         state.location = destination;
+        } else {
+            return addToPrintBuffer("You can't go that way.");
+        }
     },
-
     exit : function() {
         process.exit()
     },
@@ -22,6 +28,8 @@ module.exports = {
     },
 
     knock : function() {
-        return addToPrintBuffer('knock knock KNOCK');
+		setLocationProperty('RICKENS_DOOR', "directions.east.access", 'open');
+        setLocationProperty('RICKENS_DOOR', 'descriptionNumber', 'secondDescription');
+        return addToPrintBuffer('You rap on Ricken\'s door twelve times before he opens it and bids you come in.');
     }
 }

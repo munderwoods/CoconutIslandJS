@@ -26,5 +26,6 @@ module.exports = {
     hungerBar: [],
     time: 65,
     hours: 0,
+    dynamicLocations: []
 }
 

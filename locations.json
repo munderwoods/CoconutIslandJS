@@ -20,12 +20,13 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
-    "firstDescription": "You stand in front of Ricken's door. It's east of you. His home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. The crowd at the boats is impassable. The cobblestone is slippery under your boots.",
-    "secondDescription": "You stand in front of Ricken's door. It's east of you. His home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. Ricken has cleared a path through to the boats. The cobblestone is slippery under your boots.",
-    "thirdDescription": ""
+    "firstDescription": "You stand in front of Ricken's door. It's east of you. You try the knob and it is locked. Ricken's home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. The crowd at the boats is impassable. The cobblestone is slippery under your boots.",
+    "secondDescription": "You stand in front of Ricken's door. It's east of you and open. His home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. Ricken has cleared a path through the crowd to the boats. The cobblestone is slippery under your boots.",
+    "thirdDescription": "You stand in front of Ricken's door. It's east of you and open. Ricken's home is a dilapidated shack in a row of dilapidated shacks that line the waterfront. North of you is the docks. Ricken has cleared a path through the crowd to the boats. The cobblestone is slippery under your boots."
   },
-  "items": ["DOOR"],
+  "items": [],
   "icon": "_",
   "visited": true,
   "temperature": 5
@@ -51,6 +52,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "A small room lit by a mostly open fire with a cast iron pot hung over it. There are rum bottles scattered across the floor. The door to the west leads outside.",
     "secondDescription": "",
@@ -90,6 +92,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "The entire population of the island is at the docks trying to get passage on a boat. One trawler is inundated with flesh and taking on water. Ricken's men are fending them off with spears. Ricken stands at the edge of his boat with his rifle on his hip waiting for you.",
     "secondDescription": "",
@@ -130,6 +133,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "You are unconscious.",
     "secondDescription": "",
@@ -169,6 +173,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "You are on a small boat on a roiling sea. The sky is blotched with dark, gray clouds. It fades into the ocean in all directions save to the south. There you see a sliver of dark between the peaks of the waves.",
     "secondDescription": "",
@@ -208,6 +213,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "The sand is gray, as is everything. The sea is north. To the east and west there is more beach. South there is a path into the jungle. A bare, black crag juts out from its center.",
     "secondDescription": "",
@@ -247,6 +253,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "The air in the jungle is thick. You can only cut a narrow path through. Huge ferns sweep past your legs as you walk. They could be hiding anything. To the south, almost hidden behind a huge, moss covered rock, you find the entrance to the cave. To the east and west there is more jungle. You can hear the ocean to the north.",
     "secondDescription": "",
@@ -286,6 +293,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "You are in a dark cave. The walls are wet and slick. After your eyes adjust you can see what appears to be a switch set into the wall high above you.",
     "secondDescription": "Everything around you is on fire. There is a large crack to the north. You can see jungle beyond it. To the south there is a low opening.",
@@ -325,6 +333,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "A narrow but deep river meets the sea here. There is some vegetation around the edges, but nothing of any apparent use. To the east is a stretch of beach. North is the ocean. To the south is a high waterfall. It's falling from a cliff. There are hand holds in the cliff, but you have never climbed anything that didn't have rungs.",
     "secondDescription": "",
@@ -364,6 +373,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "You stand at the edge of a sheer cliff. It is as high as a three story building. A deep river comes from the South and flows over the cliff. The sound of the falling water is deafening. You might be able to climb down here, but the thought of it make your chest tighten up and your stomach drop",
     "secondDescription": "",
@@ -395,6 +405,7 @@
       "access": ""
     }
   },
+  "descriptionNumber": "firstDescription",
   "descriptions": {
     "firstDescription": "",
     "secondDescription": "",

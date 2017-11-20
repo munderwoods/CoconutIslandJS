@@ -9,6 +9,13 @@ const obtainableItems = require('./obtainableItems');
 const makeableItems = require('./makeableItems');
 const { getLocation } = require('./helpers');
 const { addToPrintBuffer } = require('./helpers');
+const { findLocation } = require('./helpers');
+const { findDynamicLocation } = require('./helpers');
+const { setLocationProperty } = require('./helpers');
+const { getLocationProperty } = require('./helpers');
+const _ = require('lodash');
+
+const states = [];
 
 const testFunctions = {
     keyword : function(pi, test) {
@@ -20,24 +27,42 @@ const testFunctions = {
     }
 };
 
-function mainLoop(promptInput) {
-    printLocalItemsDescriptions();
-    console.log(state.printBuffer.join(" "));
-    clearPrintBuffer();
-    getInput();
+function mainLoop(promptInput, oldState) {
+    let newState;
+    if (promptInput === 'back' && states.length > 1) {
+        states.pop();
+        newState = states[states.length - 1];
+    } else {
+        newState = calculateState(promptInput, oldState);
+        states.push(_.cloneDeep(newState));
+    }
+
+    renderDisplay(newState);
+    getInput(function(nextInput){mainLoop(nextInput, newState)});
 }
 
-function getInput() {
-    console.log(getLocation(state.location).descriptions.firstDescription);
-    promptly.prompt('What do you do? ', function (err, promptInput) {
-        state.promptInput = promptInput;
+function calculateState(promptInput, oldState) {
+    if(promptInput !== null) {
+        clearPrintBuffer();
         const action = actionTest(promptInput);
         if (action) {
-            performBehavior(action, state);
+            performBehavior(action, oldState);
         } else {
             addToPrintBuffer("You cannot.");
         }
-        mainLoop(state.promptInput);
+    }
+    printLocalItemsDescriptions();
+    return oldState;
+}
+
+function renderDisplay(state) {
+    console.log(state.printBuffer.join(" "));
+    console.log(getLocation(state.location).descriptions[getLocationProperty(state.location, "descriptionNumber")]);
+}
+
+function getInput(cb) {
+    promptly.prompt('What do you do? ', function (err, promptInput) {
+        cb(promptInput);
     })
 }
 
@@ -45,9 +70,19 @@ function getLocalItems() {
     return localItems = getLocation(state.location).items.map(function(i){return i;});
     }
 
+function getAllItems() {
+    allItems = [];
+    allItems.push(...staticItems, ...obtainableItems, ...makeableItems);
+    return allItems
+}
+
+function findItem(itemKey) {
+    return getAllItems().find(l => itemKey === l.key);
+}
+
 function printLocalItemsDescriptions() {
     getLocalItems().forEach(function(itemKey) {
-        addToPrintBuffer((staticItems.find(l => itemKey === l.key) || obtainableItems.find(l => itemKey === l.key || makeableItems.find(l => itemKey === l.key))).locationDescription);
+        addToPrintBuffer(findItem(itemKey).locationDescription);
     })
 }
 function clearPrintBuffer() {
@@ -65,4 +100,4 @@ function performBehavior(action, state)  {
 }
 
 
-mainLoop(state.promptInput);
+mainLoop(null, state);

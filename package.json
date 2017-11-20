@@ -14,6 +14,7 @@
     "chalk": "^2.3.0",
     "commander": "^2.11.0",
     "eslint": "^4.11.0",
+    "lodash": "^4.17.4",
     "prompt": "^1.0.0",
     "promptly": "^2.2.0"
   },
