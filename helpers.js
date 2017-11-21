@@ -1,4 +1,8 @@
 const locations = require('./locations');
+const state = require('./state');
+const staticItems = require('./staticItems');
+const obtainableItems = require('./obtainableItems');
+const makeableItems = require('./makeableItems');
 
 
 function getLocation(key) {
@@ -102,10 +106,50 @@ function getLocationProp(locationKey, property) {
     return getByPath(property, locationByKey(locationKey, state.dynamicLocations));
 }
 
+function getAvailableItems() {
+    return [].concat(getLocationProperty(state.location, 'items'), state.inventory);
+}
+
+function checkForItem(itemKey) {
+    return getAvailableItems().find(i => i === itemKey);
+}
+
+function getLocalItems() {
+    return getLocationProperty(state.location, 'items');
+}
+
+function deleteItem(item) {
+    state.inventory = state.inventory.filter(i => i !==item);
+    setLocationProperty(state.location, 'items', getLocationProperty(state.location, 'items').filter(i => i !== item));
+}
+
+function pickupItem(item) {
+    state.inventory.push(getLocalItems().find(i => i ===item));
+    setLocationProperty(state.location, 'items', getLocationProperty(state.location, 'items').filter(i => i !== item));
+}
+
+function getItem(itemKey) {
+    return staticItems.find(i => i.key === itemKey) || makeableItems.find(i => i.key === itemKey) || obtainableItems.find(i => i.key === itemKey);
+}
+function getItemProperty (itemKey, property) {
+    return getByPath(property, getItem(itemKey));
+}
+
+function getInventoryNames() {
+    inventoryNames = [];
+    state.inventory.forEach(i => inventoryNames.push(getItemProperty(i, 'name')));
+    return inventoryNames;
+}
+
 module.exports = {
     getLocation,
     addToPrintBuffer,
     findLocation,
     setLocationProperty,
-    getLocationProperty
+    getLocationProperty,
+    deleteItem,
+    getLocalItems,
+    pickupItem,
+    checkForItem,
+    getInventoryNames
 }

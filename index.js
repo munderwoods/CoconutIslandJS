@@ -13,13 +13,13 @@ const { findLocation } = require('./helpers');
 const { findDynamicLocation } = require('./helpers');
 const { setLocationProperty } = require('./helpers');
 const { getLocationProperty } = require('./helpers');
+const { getLocalItems } = require('./helpers');
 const _ = require('lodash');
-
-const states = [];
+const states = require('./states');
 
 const testFunctions = {
     keyword : function(pi, test) {
-        return pi.toLowerCase().match(test.parameter);
+        return test.parameter.some(i => pi.toLowerCase().match(i));
     },
 
     location: function(pi, test) {
@@ -66,9 +66,6 @@ function getInput(cb) {
     })
 }
 
-function getLocalItems() {
-    return localItems = getLocation(state.location).items.map(function(i){return i;});
-    }
 
 function getAllItems() {
     allItems = [];

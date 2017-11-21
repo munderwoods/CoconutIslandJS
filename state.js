@@ -3,7 +3,7 @@ module.exports = {
     printBuffer: ['You\'re soaked. Have been for hours. There\'s lightning, but you can\'t hear the thunder over the constant beat of the rain on the ocean. In the flashes you can see the big houses on Ingrete tumbling down the hillside. Must have been a mudslide. Chop is lapping onto the dock and washing over your ankles. You came to Ricken\'s because you\'ve already expended your other options. He can get you out and he wants what you\'ve got.'],
     action: '',
     location: 'RICKENS_DOOR',
-    Inventory: [],
+    inventory: ['GOLD_BAR'],
     maxInventorySize: 4,
     mapPosition: {
         'y': 0,

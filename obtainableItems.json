@@ -9,5 +9,16 @@
     "yields": "",
     "edible": false,
     "drinkable": false
+  },
+  {
+    "name": "Gold Bar",
+    "key": "GOLD_BAR",
+    "status": "",
+    "visualDescription": "Solid gold is heavy and this is a lot of it. There is a trident stamped into the side.",
+    "locationDescription": "There is a gold bar here. A big one.",
+    "obtainable": 0,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
   }
 ]
