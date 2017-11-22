@@ -20,5 +20,88 @@
     "yields": "",
     "edible": false,
     "drinkable": false
+  },
+{
+    "name": "Boat",
+    "key": "BOAT",
+    "status": "",
+    "visualDescription": "It's got room for four crew or some small cargo.",
+    "locationDescription": "There is a boat here.",
+    "obtainable": 0,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Beach",
+    "key": "BEACH",
+    "status": "",
+    "visualDescription": "It seems there is more sand beneath you than there are stars above you.",
+    "locationDescription": "The beach you are standing on is made up of a fine, gray sand.",
+    "obtainable": 2,
+    "yields": "SAND",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Trees",
+    "key": "TREES",
+    "status": "",
+    "visualDescription": "The trees here are coconut trees, though none appears to bear any of that fine, furry fruit.",
+    "locationDescription": "There are some trees here that you may be able to collect small bits of wood from.",
+    "obtainable": 2,
+    "yields": "WOOD",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Ferns",
+    "key": "FERNS",
+    "status": "",
+    "visualDescription": "The ferns are thick and covered in thin, sticky hairs.",
+    "locationDescription": "The jungle is carpeted with large ferns.",
+    "obtainable": 2,
+    "yields": "FERN",
+    "edible": false,
+    "drinkable": false
+  },
+{
+    "name": "Vines",
+    "key": "VINES",
+    "status": "",
+    "visualDescription": "These vines seem like they would be strong enough to use as a rope.",
+    "locationDescription": "There are irridescent green vines wrapping around the trees.",
+    "obtainable": 2,
+    "yields": "VINE",
+    "edible": false,
+    "drinkable": false
+  },
+{
+    "name": "Flint Vein",
+    "key": "FLINT_VEIN",
+    "status": "",
+    "visualDescription": "The streaks of flint in the rock pick up the light. You could probably chip some away easily.",
+    "locationDescription": "The rock walls here appear to be laced with a vein of flint.",
+    "obtainable": 2,
+    "yields": "FLINT",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "River",
+    "key": "RIVER",
+    "status": "",
+    "visualDescription": "The river is deep and is moving quickly, but the water looks clean and delicious.",
+    "locationDescription": "There is a wide, deep, rushing river here.",
+    "obtainable": 2,
+    "yields": "WATER",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Berry Bush",
+    "key": "BERRY_BUSH",
+    "status": "",
+    "visualDescription": "These bushes have little red berries growing all over them. They look like they might be tasty.",
+    "locationDescription": "There are some berry bushes here.",
+    "obtainable": 2,
+    "yields": "BERRIES",
+    "edible": false,
+    "drinkable": false
   }
 ]

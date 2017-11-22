@@ -5,7 +5,7 @@
     "status": "",
     "visualDescription": "A long, wooden rifle. You don't know enough to say more about it.",
     "locationDescription": "",
-    "obtainable": 0,
+    "obtainable": 1,
     "yields": "",
     "edible": false,
     "drinkable": false
@@ -16,7 +16,132 @@
     "status": "",
     "visualDescription": "Solid gold is heavy and this is a lot of it. There is a trident stamped into the side.",
     "locationDescription": "There is a gold bar here. A big one.",
-    "obtainable": 0,
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Sand",
+    "key": "SAND",
+    "status": "",
+    "visualDescription": "Fine, gray sand.",
+    "locationDescription": "There is a little pile of sand here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Oar",
+    "key": "OAR",
+    "status": "",
+    "visualDescription": "A wooden oar that has been worn smooth and shiny from use.",
+    "locationDescription": "There is an oar sitting next to you.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },  {
+    "name": "Paper",
+    "key": "PAPER",
+    "status": "",
+    "visualDescription": "A blank sheet of paper. It would be perfect for drawing a map on.",
+    "locationDescription": "There is a rolled up piece of paper here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },  {
+    "name": "Pencil",
+    "key": "PENCIL",
+    "status": "",
+    "visualDescription": "A well-used pencil. You will have to be thoughtful and conserve it.",
+    "locationDescription": "There is a pencil here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },  {
+    "name": "Coconut",
+    "key": "COCONUT",
+    "status": "",
+    "visualDescription": "A round, Harry coconut.",
+    "locationDescription": "There is a coconut half buried here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },  {
+    "name": "Fern",
+    "key": "FERN",
+    "status": "",
+    "visualDescription": "The ferns are oozing a clear, sticky substance.",
+    "locationDescription": "There are sticky ferns here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+{
+    "name": "Wood",
+    "key": "WOOD",
+    "status": "",
+    "visualDescription": "A small bit of wood.",
+    "locationDescription": "There is wood here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+{
+    "name": "Vine",
+    "key": "VINE",
+    "status": "",
+    "visualDescription": "Some long, thin vines that curl around the trees in the jungle. They are dark green and shine in the sunlight.",
+    "locationDescription": "There is a vine here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Flint",
+    "key": "FLINT",
+    "status": "",
+    "visualDescription": "A smooth, black stone with jagged edges that reflect the sunlight.",
+    "locationDescription": "There is some flint here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Water",
+    "key": "WATER",
+    "status": "",
+    "visualDescription": "The water is clear and looks refreshing.",
+    "locationDescription": "There is some water here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },{
+    "name": "Berries",
+    "key": "BERRIES",
+    "status": "",
+    "visualDescription": "Small, red berries.",
+    "locationDescription": "There are some berries here.",
+    "obtainable": 1,
+    "yields": "",
+    "edible": false,
+    "drinkable": false
+  },
+{
+    "name": "Cloth",
+    "key": "CLOTH",
+    "status": "",
+    "visualDescription": "It appears to be a piece of an old ship mast.",
+    "locationDescription": "There is some tattered cloth here.",
+    "obtainable": 1,
     "yields": "",
     "edible": false,
     "drinkable": false

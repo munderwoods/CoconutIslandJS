@@ -16,10 +16,20 @@ const { getLocationProperty } = require('./helpers');
 const { getLocalItems } = require('./helpers');
 const _ = require('lodash');
 const states = require('./states');
+const { getAvailableItems } = require('./helpers');
+const { itemKeyToName } = require('./helpers');
+const { getAllItems } = require('./helpers');
+const { findAvailableItem } = require('./helpers');
+const { findLocalItem } = require('./helpers');
+const { matchPromptInputToItemTrait } = require('./helpers');
 
 const testFunctions = {
     keyword : function(pi, test) {
         return test.parameter.some(i => pi.toLowerCase().match(i));
+    },
+
+    localItem: function (pi) {
+        return findLocalItem(pi) || matchPromptInputToItemTrait('yields', pi);
     },
 
     location: function(pi, test) {
@@ -46,7 +56,7 @@ function calculateState(promptInput, oldState) {
         clearPrintBuffer();
         const action = actionTest(promptInput);
         if (action) {
-            performBehavior(action, oldState);
+            performBehavior(action, oldState, promptInput);
         } else {
             addToPrintBuffer("You cannot.");
         }
@@ -67,11 +77,7 @@ function getInput(cb) {
 }
 
 
-function getAllItems() {
-    allItems = [];
-    allItems.push(...staticItems, ...obtainableItems, ...makeableItems);
-    return allItems
-}
+
 
 function findItem(itemKey) {
     return getAllItems().find(l => itemKey === l.key);
@@ -90,9 +96,9 @@ function actionTest(string) {
     return actions.find(a => a.test.every(test => testFunctions[test.type](string, test)));
 }
 
-function performBehavior(action, state)  {
+function performBehavior(action, state, promptInput)  {
     if (typeof actionFunctions[action.behavior.type] === "function") {
-        actionFunctions[action.behavior.type](action.behavior.parameter, state);
+        actionFunctions[action.behavior.type](action.behavior.parameter, state, promptInput);
     } else addToPrintBuffer("You cannot.");
 }
 

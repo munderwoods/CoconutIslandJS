@@ -123,6 +123,10 @@ function deleteItem(item) {
     setLocationProperty(state.location, 'items', getLocationProperty(state.location, 'items').filter(i => i !== item));
 }
 
+function addItemToInventory(itemKey) {
+    return state.inventory.push(getAllItems().find(i => i.key === itemKey).key);
+}
+
 function pickupItem(item) {
     state.inventory.push(getLocalItems().find(i => i ===item));
     setLocationProperty(state.location, 'items', getLocationProperty(state.location, 'items').filter(i => i !== item));
@@ -141,6 +145,46 @@ function getInventoryNames() {
     return inventoryNames;
 }
 
+function getAllItems() {
+        allItems = [];
+        allItems.push(...staticItems, ...obtainableItems, ...makeableItems);
+        return allItems
+}
+function itemKeyToName(itemKey) {
+    return getAllItems().find(i => itemKey === i.key).name;
+}
+
+function findAvailableItem(promptInput) {
+        return getAvailableItems().find(i => promptInput.toLowerCase().match(itemKeyToName(i).toLowerCase()));
+}
+
+function findLocalItem(promptInput) {
+        return getLocalItems().find(i => promptInput.toLowerCase().match(itemKeyToName(i).toLowerCase()));
+}
+
+function getItemProperty(itemKey, property) {
+    return getByPath(property, getAllItems().find(i => itemKey === i.key));
+}
+
+function itemKeyToObject(itemKey) {
+    return getAllItems().find(i => itemKey === i.key);
+}
+
+function getLocalItemObjects() {
+    return [] = getLocalItems().forEach(i => itemKeyToObject(i));
+}
+
+function checkForItemWithTrait(property, value) {
+    return getLocalItemObjects().find(i => value === getByPath(property, i))
+}
+
+function matchPromptInputToItemTrait(property, promptInput) {
+    traits = []
+    getAllItems().forEach(i => traits.push(getByPath(property, i)));
+    newTraits = traits.filter(i => i !== '');
+    return newTraits.find(i => promptInput.toLowerCase().match(i.toLowerCase()));
+}
+
 module.exports = {
     getLocation,
     addToPrintBuffer,
@@ -151,5 +195,18 @@ module.exports = {
     getLocalItems,
     pickupItem,
     checkForItem,
-    getInventoryNames
+    getInventoryNames,
+    getAllItems,
+    itemKeyToName,
+    getAvailableItems,
+    findLocalItem,
+    findAvailableItem,
+    getItemProperty,
+    getLocalItems,
+    checkForItemWithTrait,
+    matchPromptInputToItemTrait,
+    addItemToInventory
+
+
+
 }
