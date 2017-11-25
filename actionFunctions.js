@@ -16,6 +16,11 @@ const { getLocalItems } = require('./helpers');
 const { checkForItemWithTrait } = require('./helpers');
 const { matchPromptInputToItemTrait } = require('./helpers');
 const { addItemToInventory } = require('./helpers');
+const { matchPromptInputAgainstInventory } = require('./helpers');
+const { removeItemFromInventory } = require('./helpers');
+const { checkMakeables } = require('./helpers');
+const { findAvailableItemInPromptInput } = require('./helpers');
+
 
 module.exports = {
 
@@ -101,8 +106,8 @@ module.exports = {
             return addToPrintBuffer('You have obtained ' + itemKeyToName(item) + '.');
         }
         this.pickupFromSource(parameter, state, promptInput);
-        return addToPrintBuffer('You cannot.');
-},
+    },
+
     pickupFromSource: function(parameter, state, promptInput) {
         if (state.inventory.find(i => promptInput.toLowerCase().match(i.toLowerCase()))) {
             return addToPrintBuffer('You already have that.');
@@ -112,6 +117,48 @@ module.exports = {
             addItemToInventory(item);
             return addToPrintBuffer('You have obtained ' + itemKeyToName(item) + '.');
         }
-}
+    },
+
+    dropItem: function(parameter, state, promptInput) {
+        item = matchPromptInputAgainstInventory(promptInput);
+        if (item) {
+            localItems = getLocalItems();
+            localItems.push(item);
+            removeItemFromInventory(item);
+            return addToPrintBuffer('You have dropped ' + itemKeyToName(item) + '.');
+        }
+        return addToPrintBuffer('You do not have that.');
+    },
+
+    useCoconutOnButton: function(parameter, state, promptInput) {
+        setLocationProperty('CAVE', 'directions.south.access', 'open');
+        this.dropItem(parameter, state, promptInput);
+        setLocationProperty('CAVE', 'descriptionNumber', 'secondDescription');
+        return addToPrintBuffer('The coconut leaves your hand in a perfect arch and makes definite contact with the button. A light flickers from somewhere high above the button then a ring of fire encircles the ceiling of the cave. The fire decends down the oily walls and soon you are surrounded by flames. One the wall of the cave to the south collapses and burns away. It was a false wall.');
+    },
+
+    make: function(parameter, state, promptInput) {
+        itemToMake = checkMakeables(promptInput);
+        if (getItemProperty(itemToMake, 'requires').every(i => checkForItem(i))) {
+            getItemProperty(itemToMake, 'requires').forEach(i => deleteItem(i));
+            if (getItemProperty(itemToMake, 'obtainable') === 1) {
+            addItemToInventory(itemToMake);
+            } else {
+                localItems = getLocalItems();
+                localItems.push(itemToMake);
+                setLocationProperty(state.location, 'items', localItems);
+            }
+            return console.log('You have made ' + itemKeyToName(itemToMake) + '.');
+        }
+        return console.log('You do not have what you need to make that.')
+    },
+
+    inspectItem: function(parameter, state, promptInput) {
+        item = findAvailableItemInPromptInput(promptInput);
+        if (item) {
+            return addToPrintBuffer(getItemProperty(item, 'visualDescription'));
+        }
+        addToPrintBuffer('You do not see that.');
+    }
 
 }

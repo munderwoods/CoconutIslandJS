@@ -22,6 +22,7 @@ const { getAllItems } = require('./helpers');
 const { findAvailableItem } = require('./helpers');
 const { findLocalItem } = require('./helpers');
 const { matchPromptInputToItemTrait } = require('./helpers');
+const { matchPromptInputAgainstInventory } = require('./helpers');
 
 const testFunctions = {
     keyword : function(pi, test) {
@@ -32,9 +33,14 @@ const testFunctions = {
         return findLocalItem(pi) || matchPromptInputToItemTrait('yields', pi);
     },
 
+    inventoryItem: function(pi) {
+        return matchPromptInputAgainstInventory(pi);
+    },
+
     location: function(pi, test) {
         return state.location === test.parameter;
-    }
+    },
+
 };
 
 function mainLoop(promptInput, oldState) {

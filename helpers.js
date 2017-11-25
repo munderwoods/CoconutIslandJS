@@ -23,31 +23,20 @@ function findDynamicLocation(locationKey) {
 
 function setLocationProperty(locationKey, property, value) {
 	propertyArray = property.split(".");
-    if(findDynamicLocation(locationKey)) {
-		var currentObject = findDynamicLocation(locationKey);
-		for (var i = 0; i < propertyArray.length; i++) {
-			if( currentObject[propertyArray[i]] === undefined ) {
-				currentObject[propertyArray[i]] = {}
-			}
-			if(i === propertyArray.length - 1) {
-				currentObject[propertyArray[i]] = value;
-            }
-			currentObject = currentObject[propertyArray[i]];
-		}
-    } else {
+    if (!findDynamicLocation(locationKey)) {
         state.dynamicLocations.push({key: locationKey});
-        var currentObject = findDynamicLocation(locationKey);
-		for (var i = 0; i < propertyArray.length; i++) {
-			if( currentObject[propertyArray[i]] === undefined ) {
-				currentObject[propertyArray[i]] = {}
-			}
-			if(i === propertyArray.length - 1) {
-				currentObject[propertyArray[i]] = value;
-            }
-			currentObject = currentObject[propertyArray[i]];
-		}
     }
-
+    var currentObject = findDynamicLocation(locationKey);
+    for (var i = 0; i < propertyArray.length; i++) {
+        if( currentObject[propertyArray[i]] === undefined ) {
+            currentObject[propertyArray[i]] = {}
+        }
+        if(i === propertyArray.length - 1) {
+            currentObject[propertyArray[i]] = value;
+            break;
+        }
+        currentObject = currentObject[propertyArray[i]];
+    }
 }
 
 function findStaticLocationProperty(locationKey, propertyArray) {
@@ -108,6 +97,10 @@ function getLocationProp(locationKey, property) {
 
 function getAvailableItems() {
     return [].concat(getLocationProperty(state.location, 'items'), state.inventory);
+}
+
+function findAvailableItemInPromptInput(promptInput) {
+    return getAvailableItems().find(i => promptInput.toLowerCase().match(i.toLowerCase()));
 }
 
 function checkForItem(itemKey) {
@@ -182,7 +175,20 @@ function matchPromptInputToItemTrait(property, promptInput) {
     traits = []
     getAllItems().forEach(i => traits.push(getByPath(property, i)));
     newTraits = traits.filter(i => i !== '');
+    newTraits = newTraits.filter(i => i !== undefined);
     return newTraits.find(i => promptInput.toLowerCase().match(i.toLowerCase()));
+}
+
+function matchPromptInputAgainstInventory(promptInput) {
+    return state.inventory.find(i => promptInput.toLowerCase().match(i.toLowerCase()));
+}
+
+function removeItemFromInventory(itemKey) {
+    return state.inventory.pop(i => i.key === itemKey);
+}
+
+function checkMakeables(promptInput) {
+    return makeableItems.find(i => promptInput.toLowerCase().match(i.key.toLowerCase())).key;
 }
 
 module.exports = {
@@ -205,7 +211,11 @@ module.exports = {
     getLocalItems,
     checkForItemWithTrait,
     matchPromptInputToItemTrait,
-    addItemToInventory
+    matchPromptInputAgainstInventory,
+    removeItemFromInventory,
+    addItemToInventory,
+    checkMakeables,
+    findAvailableItemInPromptInput
 
 
 

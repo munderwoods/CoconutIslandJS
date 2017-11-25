@@ -219,7 +219,7 @@
     "secondDescription": "",
     "thirdDescription": ""
   },
-  "items": ["BEACH", "BOAT"],
+  "items": ["BEACH", "BOAT", "PAPER", "PENCIL"],
   "icon": "\u2592",
   "visited": false,
   "temperature": 5
@@ -295,8 +295,47 @@
   },
   "descriptionNumber": "firstDescription",
   "descriptions": {
-    "firstDescription": "You are in a dark cave. The walls are wet and slick. After your eyes adjust you can see what appears to be a switch set into the wall high above you.",
+    "firstDescription": "You are in a dark cave. The walls are wet and slick. After your eyes adjust you can see what appears to be a button set into the wall high above you.",
     "secondDescription": "Everything around you is on fire. There is a large crack to the north. You can see jungle beyond it. To the south there is a low opening.",
+    "thirdDescription": ""
+  },
+  "items": [],
+  "icon": "F",
+  "visited": false,
+  "temperature": 4
+}, {
+  "key": "FLINT_CHAMBER",
+  "name": "Flint Chamber",
+  "directions": {
+    "north": {
+      "destination": "CAVE",
+      "access": "open"
+    },
+    "east": {
+      "destination": "",
+      "access": ""
+    },
+    "west": {
+      "destination": "",
+      "access": ""
+    },
+    "south": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenOne": {
+      "destination": "",
+      "access": ""
+    },
+    "hiddenTwo": {
+      "destination": "",
+      "access": ""
+    }
+  },
+  "descriptionNumber": "firstDescription",
+  "descriptions": {
+    "firstDescription": "This is a smaller cave. The walls are jagged and shiny.",
+    "secondDescription": "",
     "thirdDescription": ""
   },
   "items": ["FLINT_VEIN"],

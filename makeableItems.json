@@ -6,7 +6,51 @@
     "visualDescription": "A map of the indian ocean. From what you can tell, your current location is unmarked. You will have to update the map as you go.",
     "locationDescription": "There is what appears to be a rolled up map here.",
     "obtainable": 1,
-    "yields": "",
+    "requires": ["PAPER", "PENCIL"],
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Fire",
+    "key": "FIRE",
+    "status": "",
+    "visualDescription": "A small fire. It offers meager warmth.",
+    "locationDescription": "There is a fire here.",
+    "obtainable": 0,
+    "requires": ["WOOD", "FLINT"],
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Sundial",
+    "key": "SUNDIAL",
+    "status": "",
+    "visualDescription": "A stick protruding from the sand. The shadow coming off of the stick indicates the time of day. Only works where sunlight is present.",
+    "locationDescription": "There is a Sundial here.",
+    "obtainable": 0,
+    "requires": ["SAND", "WOOD"],
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Pack",
+    "key": "PACK",
+    "status": "",
+    "visualDescription": "A crude packpack you crafted out of an old shipmast and some vines. It carries little and looks like it might fall apart from a slight jossling.",
+    "locationDescription": "There is a pack here.",
+    "obtainable": 1,
+    "requires": ["CLOTH", "VINE"],
+    "edible": false,
+    "drinkable": false
+  },
+  {
+    "name": "Splint",
+    "key": "SPLINT",
+    "status": "",
+    "visualDescription": "A crude medical device that can be used on a broken bone.",
+    "locationDescription": "There is a splint here.",
+    "obtainable": 1,
+    "requires": ["WOOD", "VINE"],
     "edible": false,
     "drinkable": false
   }
