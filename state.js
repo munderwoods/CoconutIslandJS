@@ -24,8 +24,14 @@ module.exports = {
     thirstBar: [],
     hunger: 10,
     hungerBar: [],
-    time: 65,
-    hours: 0,
+    time: {
+        turnCount: 0,
+        hours: 0,
+        minutes: 0,
+        hoursString: '',
+        minutesString: '',
+        displayTime: ''
+    },
     dynamicLocations: []
 }
 

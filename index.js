@@ -23,6 +23,10 @@ const { findAvailableItem } = require('./helpers');
 const { findLocalItem } = require('./helpers');
 const { matchPromptInputToItemTrait } = require('./helpers');
 const { matchPromptInputAgainstInventory } = require('./helpers');
+const { time } = require('./timeLogic');
+locationText = "";
+updateText = "";
+locationName = getLocationProperty(state.location, 'name');
 
 const testFunctions = {
     keyword : function(pi, test) {
@@ -59,6 +63,7 @@ function mainLoop(promptInput, oldState) {
 
 function calculateState(promptInput, oldState) {
     if(promptInput !== null) {
+        time();
         clearPrintBuffer();
         const action = actionTest(promptInput);
         if (action) {
@@ -72,14 +77,14 @@ function calculateState(promptInput, oldState) {
 }
 
 function renderDisplay(state) {
-    console.log(state.printBuffer.join(" "));
-    console.log(getLocation(state.location).descriptions[getLocationProperty(state.location, "descriptionNumber")]);
+    updateText = state.printBuffer.join(" ");
+    locationText = getLocation(state.location).descriptions[getLocationProperty(state.location, "descriptionNumber")];
 }
 
 function getInput(cb) {
-    promptly.prompt('What do you do? ', function (err, promptInput) {
-        cb(promptInput);
-    })
+    //promptly.prompt('What do you do? ', function (err, promptInput) {
+    //    cb(promptInput);
+   // })
 }
 
 
@@ -110,3 +115,9 @@ function performBehavior(action, state, promptInput)  {
 
 
 mainLoop(null, state);
+module.exports = {
+    mainLoop,
+    locationText,
+    updateText,
+    locationName
+}
